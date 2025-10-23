@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="dark" lang="en">
+<html class="dark" lang="es">
 
 <head>
     <meta charset="utf-8" />
@@ -81,6 +81,7 @@
         <main class="flex-1">
             <div class="container mx-auto px-4 py-8 sm:px-6 lg:px-8">
                 <div class="max-w-3xl">
+                    <div class="container flex-1 px-4 sm"></div>
                     <h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
                         Bienvenido de nuevo, <span id="username-display"></span>
                     </h2>

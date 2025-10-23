@@ -1,6 +1,7 @@
 <?php
 class MarcaDAO
 {
+    const ERROR = "Error: ";
     public function registrarMarca(MarcaDTO $marcaDTO)
     {
         $conexion = Conexion::conectar();
@@ -19,7 +20,7 @@ class MarcaDAO
                 $mensaje = "Error al registrar la marca";
             }
         } catch (PDOException $e) {
-            $mensaje = "Error: " . $e->getMessage();
+            $mensaje = self::ERROR . $e->getMessage();
         } finally {
             $conexion = null;
         }
@@ -64,7 +65,7 @@ class MarcaDAO
                 $mensaje = "Error al actualizar la marca.";
             }
         } catch (PDOException $e) {
-            $mensaje = "Error: " . $e->getMessage();
+            $mensaje = self::ERROR . $e->getMessage();
         } finally {
             $conexion = null;
         }
@@ -87,7 +88,7 @@ class MarcaDAO
                 $mensaje = "Error al eliminar la marca.";
             }
         } catch (PDOException $e) {
-            $mensaje = "Error: " . $e->getMessage();
+            $mensaje = self::ERROR . $e->getMessage();
         } finally {
             $conexion = null;
         }
