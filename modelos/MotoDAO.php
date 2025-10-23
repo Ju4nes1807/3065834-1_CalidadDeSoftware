@@ -1,6 +1,7 @@
 <?php
 class MotoDAO
 {
+    const ERROR = "Error: ";
     public function registrarMoto(MotoDTO $motoDTO)
     {
         $conexion = Conexion::conectar();
@@ -37,7 +38,7 @@ class MotoDAO
                 $mensaje = "Error al registrar la moto";
             }
         } catch (PDOException $e) {
-            $mensaje = "Error: " . $e->getMessage();
+            $mensaje = self::ERROR . $e->getMessage();
         } finally {
             $conexion = null;
         }
@@ -102,7 +103,7 @@ class MotoDAO
                 $mensaje = "Error al editar la moto";
             }
         } catch (PDOException $e) {
-            $mensaje = "Error: " . $e->getMessage();
+            $mensaje = self::ERROR . $e->getMessage();
         } finally {
             $conexion = null;
         }
@@ -145,7 +146,7 @@ class MotoDAO
                 $mensaje = "Error al eliminar la moto";
             }
         } catch (PDOException $e) {
-            $mensaje = "Error: " . $e->getMessage();
+            $mensaje = self::ERROR . $e->getMessage();
         } finally {
             $conexion = null;
         }

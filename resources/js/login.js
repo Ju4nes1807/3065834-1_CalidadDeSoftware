@@ -1,3 +1,10 @@
+async function hashPassword(password) {
+    const encoder = new TextEncoder().encode(password);
+    const hashBuffer = await crypto.subtle.digest('SHA-256', encoder);
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.querySelector('form');
 
@@ -44,11 +51,4 @@ document.addEventListener('DOMContentLoaded', function () {
         form.reset();
         window.location.href = '../views/dashboard.php';
     });
-
-    async function hashPassword(password) {
-        const encoder = new TextEncoder().encode(password);
-        const hashBuffer = await crypto.subtle.digest('SHA-256', encoder);
-        const hashArray = Array.from(new Uint8Array(hashBuffer));
-        return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-    }
 });
