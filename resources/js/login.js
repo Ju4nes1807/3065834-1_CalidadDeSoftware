@@ -49,6 +49,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         alert(`✅ Bienvenido, ${user.username}!`);
         form.reset();
-        window.location.href = '../views/dashboard.php';
+        globalThis.location.href = '../views/dashboard.php';
     });
 });

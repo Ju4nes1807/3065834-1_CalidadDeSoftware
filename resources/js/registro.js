@@ -56,6 +56,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         alert('✅ Registro exitoso. Ahora puedes iniciar sesión.');
         form.reset();
-        window.location.href = '../views/inicioSesion.php';
+        globalThis.location.href = '../views/inicioSesion.php';
     });
 });

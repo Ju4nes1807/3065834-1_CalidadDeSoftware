@@ -4,6 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
     logoutBtn.addEventListener('click', () => {
         localStorage.removeItem('session');
 
-        window.location.href = '../views/landinpage.php';
+        globalThis.location.href = '../views/landinpage.php';
     });
 });

@@ -126,7 +126,7 @@
 
             if (!session) {
                 // Si no hay sesión, redirige al login
-                window.location.href = '../views/inicioSesion.php';
+                globalThis.location.href = '../views/inicioSesion.php';
                 return;
             }
 
